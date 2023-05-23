@@ -83,7 +83,10 @@ void setup(void){
 
   bno.setExtCrystalUse(true);
 
-  // setting acceleration offsets for imu
+  // setting offsets for imu (custom for each imu)
+  offsets.gyro_offset_x = 1;
+  offsets.gyro_offset_y = -3;
+  offsets.gyro_offset_z = -2;
   offsets.accel_offset_x = -45;
   offsets.accel_offset_y = -9;
   offsets.accel_offset_z = -51;
