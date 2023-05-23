@@ -1,0 +1,2 @@
+base_controller_twist_converter:bno055_imu_ros:devbot_localization:devbot_navigation:devbot_rtabmap:devbot_teleop:mpu6050_imu_ros
+-DCATKIN_DEVEL_PREFIX=/home/devin1126/remote_ws/devel -DCMAKE_INSTALL_PREFIX=/home/devin1126/remote_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/devin1126/devbot_ws/devel
+
+Name: devbot_teleop
+Description: Description of devbot_teleop
+Version: 0.0.0
+Cflags: -I/home/devin1126/devbot_ws/devel/include -I/home/devin1126/devbot_ws/src/devbot_teleop/include
+Libs: -L${prefix}/lib -ldevbot_teleop
+Requires: message_runtime roscpp rospy std_msgs

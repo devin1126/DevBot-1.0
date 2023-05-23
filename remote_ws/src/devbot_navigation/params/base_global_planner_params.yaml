@@ -1,0 +1,7 @@
+base_global_planner: global_planner/GlobalPlanner
+
+GlobalPlanner:
+# Setting global planner parameters
+  use_grid_path: false
+  use_dijkstra: true # either A* or Dijkstra
+  default_tolerance: 0.1

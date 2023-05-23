@@ -1,0 +1,8 @@
+prefix=/home/devin1126/devbot_ws/install
+
+Name: base_controller_twist_converter
+Description: Description of base_controller_twist_converter
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 

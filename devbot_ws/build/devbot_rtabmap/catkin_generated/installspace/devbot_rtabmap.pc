@@ -1,0 +1,8 @@
+prefix=/home/devin1126/devbot_ws/install
+
+Name: devbot_rtabmap
+Description: Description of devbot_rtabmap
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

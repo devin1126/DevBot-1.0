@@ -1,0 +1,14 @@
+<!--
+* This launch file publishes odometry messages derived solely from
+* the wheel velocities produced from the wheel encoders
+-->
+<launch>
+    <!-- Launching Twist Node-->
+    <node pkg="base_controller_twist_converter" type="base_controller_twist_converter_node" name="twist_node">
+        <!-- Set custom parameters if needed
+        <param name="linear_velocity_stdev" type="double" value="" />
+        <param name="angular_velocity_stdev" type="double" value="" />
+        -->
+    </node>
+    
+</launch>

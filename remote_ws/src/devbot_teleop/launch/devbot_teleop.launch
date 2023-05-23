@@ -1,0 +1,9 @@
+<launch>
+    <!-- Verifying Port Name of Motor Controller-->
+    <arg name="ttyACM0_used" default="true"/>
+
+    <!-- Initializing ROS Teleoperation Node-->
+    <remap if="$(arg ttyACM0_used)" from="vel_cmd" to="mega_one/vel_cmd"/>
+    <remap unless="$(arg ttyACM0_used)" from="vel_cmd" to="mega_two/vel_cmd"/>
+    <node name="teleop_pub" pkg="devbot_teleop" type="teleop_control.py" output="screen"/>
+</launch>

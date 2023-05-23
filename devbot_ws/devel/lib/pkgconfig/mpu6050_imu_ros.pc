@@ -1,0 +1,8 @@
+prefix=/home/devin1126/devbot_ws/devel
+
+Name: mpu6050_imu_ros
+Description: Description of mpu6050_imu_ros
+Version: 0.0.0
+Cflags: -I/home/devin1126/devbot_ws/devel/include -I/home/devin1126/devbot_ws/src/mpu6050_imu_ros/include
+Libs: -L${prefix}/lib -lmpu6050_imu_ros
+Requires: geometry_msgs message_runtime roscpp sensor_msgs

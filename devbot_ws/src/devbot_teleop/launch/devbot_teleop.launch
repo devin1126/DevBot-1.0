@@ -1,0 +1,7 @@
+<launch>
+    /// Including additional required ROS serial node
+    <include file="$(find devbot_teleop)/launch/rosserial_node.launch"/>
+
+    /// Including main ROS teleoperation node
+    <node name="teleop_pub" pkg="devbot_teleop" type="teleop_control.py" output="screen"/>
+</launch>

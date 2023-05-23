@@ -1,0 +1,17 @@
+<launch>
+    <arg name="nav" default="false"/>
+    <arg name="use_lcd" default="false"/>
+
+    <!-- Launch Rosserial Nodes for Both Arduino Mega Boards (57600 Baud Rate)-->
+    <node ns="mega_one" pkg="rosserial_python" type="serial_node.py" name="serial_node_one">
+        <remap if="$(arg nav)" from="cmd_vel" to="/cmd_vel"/>
+        <param name="baud" type="int" value="57600"/>
+        <param name="port" type="string" value="/dev/ttyACM0"/>
+    </node>
+    <node ns="mega_two" pkg="rosserial_python" type="serial_node.py" name="serial_node_two">
+        <remap if="$(arg use_lcd)" from="vel_cmd" to="/mega_one/vel_cmd"/>
+        <param name="baud" type="int" value="57600"/>
+        <param name="port" type="string" value="/dev/ttyACM1"/>
+    </node>
+
+</launch>

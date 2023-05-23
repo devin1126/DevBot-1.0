@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="tf2_ros" type="static_transform_publisher" name="base_to_imu_transform" args="0.0 0.0 0.1073 0.0 0.0 0.0 base_link imu_link"/>
+	<node pkg="mpu6050_imu_ros" type="mpu6050_imu_converter_node" name="mpu6050_imu_converter" output="screen">
+		<remap from="~/imu" to="/imu/data"/>
+	</node>
+</launch>

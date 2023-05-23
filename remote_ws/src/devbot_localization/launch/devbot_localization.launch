@@ -1,0 +1,25 @@
+<launch>
+
+    <!-- Arguments -->
+    <arg name="map_file" default="$(find devbot_localization)/maps/basement.yaml"/>
+    <arg name="camera"   default="false"/>
+    <arg name="nav"      default="false"/>
+
+    <!-- Sensor fusion localization launch -->
+    <include file="$(find devbot_localization)/launch/devbot_localization_twist.launch">
+        <arg if="$(arg nav)" name="nav" value="true"/>
+    </include>
+
+    <!--Launch static transform between base_link and camera_link-->
+    <node if="$(arg camera)" name="base_to_camera_static_publisher" pkg="tf2_ros" type="static_transform_publisher" args="0.2531 0 0.0859 0 0 0 base_link camera_link"/>
+
+    <!-- Map server -->
+    <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+    <!-- AMCL -->
+    <include file="$(find devbot_localization)/launch/amcl.launch"/>
+
+    <!-- Rviz (can be switched between 'nav_config' and 'amcl_config') -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find devbot_localization)/rviz/nav_config.rviz"/>
+
+</launch>

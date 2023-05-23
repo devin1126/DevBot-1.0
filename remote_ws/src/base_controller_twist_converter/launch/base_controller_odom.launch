@@ -1,0 +1,16 @@
+<!--
+* This launch file publishes odometry messages derived solely from
+* the wheel velocities produced from the wheel encoders
+-->
+<launch>
+    <!-- Launching Odometry Node-->
+    <node pkg="base_controller_twist_converter" type="base_controller_odom_converter_node" name="odom_node">
+        <remap from="odom" to="/wheel_odom" />
+
+        <!-- Set custom parameters if needed
+        <param name="linear_velocity_stdev" type="double" value="" />
+        <param name="angular_velocity_stdev" type="double" value="" />
+        -->
+    </node>
+    
+</launch>

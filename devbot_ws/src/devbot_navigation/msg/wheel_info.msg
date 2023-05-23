@@ -1,0 +1,6 @@
+int64 wheel_volt_R
+int64 wheel_volt_L
+float64 wheel_cmd_R
+float64 wheel_cmd_L
+float64 wheel_vel_R
+float64 wheel_vel_L

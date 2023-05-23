@@ -1,0 +1,8 @@
+prefix=/home/devin1126/remote_ws/install
+
+Name: devbot_localization
+Description: Description of devbot_localization
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,13 @@
+<launch>
+
+    <include file="$(find devbot_localization)/launch/devbot_localization.launch">
+        <arg name="map_file" value="$(find devbot_localization)/maps/apartment.yaml"/>
+        <arg name="camera"   value="false"/>
+        <arg name="nav"      value="true"/>
+    </include>
+
+    <node pkg="devbot_navigation" type="rviz_click_to_2d" name="rviz_click_to_2d"/>
+
+    <include file="$(find devbot_navigation)/launch/move_base.launch"/>
+
+</launch>

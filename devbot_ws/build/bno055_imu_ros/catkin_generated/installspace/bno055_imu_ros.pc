@@ -1,0 +1,8 @@
+prefix=/home/devin1126/devbot_ws/install
+
+Name: bno055_imu_ros
+Description: Description of bno055_imu_ros
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -lbno055_imu_ros
+Requires: geometry_msgs message_runtime roscpp sensor_msgs

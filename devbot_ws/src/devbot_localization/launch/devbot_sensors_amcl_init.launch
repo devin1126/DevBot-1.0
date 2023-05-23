@@ -1,0 +1,16 @@
+<launch>
+
+    <!-- Launch Camera Node (Optional) -->
+    <arg name="camera" default="false"/>
+    <include if="$(arg camera)" file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+
+    <!-- Launch Rosserial Nodes for Both Arduino Mega Boards (57600 Baud Rate)-->
+    <arg name="nav" default="false"/>
+    <include file="$(find devbot_localization)/launch/devbot_sensors_init.launch">
+        <arg if="$(arg nav)" name="nav" value="true"/>
+    </include>
+
+    <!-- Launch LD14 Lidar Sensor Node -->
+    <include file="$(find ldlidar_sl_ros)/launch/ld14.launch"/>
+    
+</launch>
