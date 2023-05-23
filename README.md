@@ -1,7 +1,7 @@
 # DevBot-1.0
-This repository contains all of the code that was used in the creation of the first iteration of my custom ROS-interfaced, surveillance robot coined the 'DevBot'. A presentation that highlights all capabilites of the DevBot can be found in this [presentation](https://youtu.be/uFJXizEifx8). Please read below for details on the code, robot design, and more.
+This repository contains all of the code that was used in the creation of the first iteration of my custom ROS-interfaced, surveillance robot coined the 'DevBot'. A presentation that highlights all capabilites of the DevBot in detail can be found in this [presentation](https://youtu.be/uFJXizEifx8). Please read below for details on the code, robot design, and more.
 
-The code used in this project is split into two separate workspaces where 'devbot_ws' contains code that was ran directly on the robot and 'remote_ws' contains code that was ran on the remote computer that the robot was interfacing with. This framework was utilized to reduce the computational load that the robot must endure in order to operate properly. 
+The code used in this project is split into two separate workspaces where 'devbot_ws' contains code that was ran directly on the robot and 'remote_ws' contains code that was ran on the remote computer that the robot was interfacing with. This framework was utilized to reduce the computational load that the robot must endure in order to operate properly. **Please note that both the DevBot and the remote computer utilized ROS Noetic for operation.** 
 
 
 ## Image of Robot
@@ -23,3 +23,19 @@ As stated previously, the DevBot is ROS-interfaced to allow for ease of communic
 * Simultaneous Localization & Mapping (SLAM) through the use of a V-SLAM (visual) algorithm known as Real-Time Appearance-Based Mapping (or RTAB-Map)
 * 2D Pose Estimation on an occupancy grid through the use of the Adaptive Monte Carlo Localization (AMCL) algorithm
 * Autonomous Navigation through use of the *move_base* node
+---
+## Required External ROS Packages
+In the current operation framework, the following external ROS packages are required to be installed (Note: '+' = install on robot and '-' = install on remote computer):
+* *[rtabmap](https://github.com/introlab/rtabmap_ros)* (+-)
+* *[rtabmap_ros](https://github.com/introlab/rtabmap_ros)* (+-)
+* *[robot_localization](https://github.com/cra-ros-pkg/robot_localization/tree/noetic-devel)* (-)
+* *[realsense2_camera](https://github.com/leggedrobotics/realsense-ros-rsl)* (+)
+* *[ldlidar_sl_ros](https://github.com/ldrobotSensorTeam/ldlidar_sl_ros)* (+)
+* *ddynamic_reconfigure* (+-)
+
+One can easily install *ddynamic_reconfigure* via APT using the following terminal commands:
+
+```
+$ sudo apt-get update
+$ sudo apt-get install ros-*-ddynamic-reconfigure
+```
