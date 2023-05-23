@@ -1,6 +1,8 @@
 /*
     Work is mostly borrowed from Jeff Rowberg's MPU6050 repository
-    however with custom ROS driver implemented
+    however with custom ROS driver implemented. Currently not used 
+    for DevBot, but the ROS driver is still available for those who
+    want to utilize it.
 */
 
 
